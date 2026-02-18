@@ -1,0 +1,1 @@
+// All Events Page with Search bar 
