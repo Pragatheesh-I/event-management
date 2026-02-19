@@ -14,17 +14,17 @@ export function middleware(request: NextRequest) {
     const { role } = decoded
  
     if (
-      request.nextUrl.pathname.startsWith("/dashboard/organizer") &&
+      request.nextUrl.pathname.startsWith("/portal/organizer") &&
       role !== "ORGANIZER"
     ) {
-      return NextResponse.redirect(new URL("/dashboard/user", request.url))
+      return NextResponse.redirect(new URL("/portal/user", request.url))
     }
  
     if (
-      request.nextUrl.pathname.startsWith("/dashboard/user") &&
+      request.nextUrl.pathname.startsWith("/portal/user") &&
       role !== "USER"
     ) {
-      return NextResponse.redirect(new URL("/dashboard/organizer", request.url))
+      return NextResponse.redirect(new URL("/portal/organizer", request.url))
     }
  
     return NextResponse.next()
@@ -35,5 +35,5 @@ export function middleware(request: NextRequest) {
 }
  
 export const config = {
-  matcher: ["/dashboard/:path*"]
+  matcher: ["/portal/:path*"]
 }
