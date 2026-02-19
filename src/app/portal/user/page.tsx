@@ -1,0 +1,1 @@
+// this is registered Events Page
